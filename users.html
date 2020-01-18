@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Name</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+<style type="text/css">
+    body{
+      background-image: url('/static/bh.jpg');
+      background-repeat: no-repeat;
+      background-size: 1300px 750px;
+    }
+    .but{
+      width: 800px;
+    }
+</style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <img src="/static/EasyTravel.png" width="30" height="30" alt="">
+
+  <a class="navbar-brand" href="#" style="margin-left: 10px;">EasyTravel</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <form method="POST" action="/home1">
+          <input type="submit" class="btn btn-light" value="Home">
+        </form>
+        
+
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Profile <span class="sr-only">(current)</span></a>
+      </li>
+      <!-- <li class="nav-item">
+        <a class="nav-link" href="#">Features</a>
+      </li> -->
+      
+      <li class="nav navbar-nav nav-item">
+        <form method="GET" action="/mybook">
+        <input type="submit" class="btn btn-primary btn-sm" value="My Bookings">
+        </form>
+      </li>
+      <li>
+        <button type="button" class="btn btn-light but"></button>
+      </li>
+<div class="navbar-right">
+  <li >
+    <form method="GET" action="/">
+      <input type="submit" class="btn btn-primary btn-sm " value="Logout" >
+    </form>
+      
+    </li>
+</div>
+           
+      <!-- <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          My Bookings
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <form method="POST" action="/payna">
+            <p class="dropdown-item" >Within States</p>
+          </form>
+          <a class="dropdown-item" href="#">Within Hyderabad</a>
+          
+          
+        </div>
+      </li> -->
+    </ul>
+  </div>
+</nav>
+<div style="margin-left: 200px; margin-right: 200px;">
+    <br>
+    <br>
+    <h1 style="font-family: avenir next; color: black;">Your Searched Results :</h1>
+    <br>
+    <br>
+    <br>
+<table class="table table-bordered" style="color: black;">
+  <thead>
+    <tr>
+      <th>Source</th>
+            <th>Destination</th>
+            <th>Mode of Transport</th>
+            <th>Price</th>
+            <th>Available Seats</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for row in rows %}  
+        <tr>  
+            <td>{{row['source']}}</td>  
+            <td>{{row["destination"]}}</td>  
+            <td>{{row["modeoftransport"]}}</td>  
+            <td>{{row["price"]}}</td>  
+            <td>{{row["avlseats"]}}</td>
+        </tr>  
+
+        {% endfor %} 
+    
+</table>
+<br>
+<br>
+<form method="GET" action="/booknow">
+        <input type="submit" class="btn btn-primary btn-sm" value="Book Now">
+        </form>
+</div>
+
+    <!-- <table border=1>
+        <tr>
+            <th>Source</th>
+            <th>Destination</th>
+            <th>Mode of Transport</th>
+            <th>Price</th>
+            <th>Available Seats</th>
+        </tr>
+
+        
+    {% for row in rows %}  
+        <tr>  
+            <td>{{row['source']}}</td>  
+            <td>{{row["destination"]}}</td>  
+            <td>{{row["modeoftransport"]}}</td>  
+            <td>{{row["price"]}}</td>  
+            <td>{{row["avlseats"]}}</td>
+        </tr>  
+
+        {% endfor %} 
+    </table>
+ -->
+ <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</body>
+</html>
