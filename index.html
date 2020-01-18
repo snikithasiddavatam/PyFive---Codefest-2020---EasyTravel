@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<head>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300&display=swap" rel="stylesheet">
+
+  <style type="text/css">
+    body{
+      background-image: url('/static/bh.jpg');
+      background-repeat: no-repeat;
+      background-size: 1300px 750px;
+    }
+    .mn{
+      width: 500px;  
+      margin-left: 410px;
+    }
+
+    h1{
+      font-family: 'Open Sans Condensed', sans-serif;
+      margin-left: 410px;
+      color: white;
+    }
+
+    .m{
+      width: 300px;
+      margin-left: 20px;
+    }
+
+    /*.ea{
+      background-color: #6FAFD8;
+    }*/
+
+    .mt{
+      font-family: avenir next;
+      background-color: white;
+    }
+    .width{
+      width: 100px;
+    }
+
+    .white{
+      color: white;
+      font-family: avenir next;
+    }
+
+    .but{
+      width: 800px;
+    }
+
+
+  </style>
+</head>
+<html>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <img src="/static/EasyTravel.png" width="30" height="30" alt="">
+
+  <a class="navbar-brand" href="#" style="margin-left: 10px;">EasyTravel</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav">
+      <li class="nav-item active">
+        <form method="POST" action="/home1">
+          <input type="submit" class="btn btn-light" value="Home">
+        </form>
+        
+
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link" href="#">Profile <span class="sr-only">(current)</span></a>
+      </li>
+      <!-- <li class="nav-item">
+        <a class="nav-link" href="#">Features</a>
+      </li> -->
+      
+      <li class="nav navbar-nav nav-item">
+        <form method="GET" action="/mybook">
+        <input type="submit" class="btn btn-primary btn-sm" value="My Bookings">
+        </form>
+      </li>
+      <li>
+        <button type="button" class="btn btn-light but"></button>
+      </li>
+<div class="navbar-right">
+  <li >
+    <form method="GET" action="/">
+      <input type="submit" class="btn btn-primary btn-sm " value="Logout" >
+    </form>
+      
+    </li>
+</div>
+           
+      <!-- <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          My Bookings
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <form method="POST" action="/payna">
+            <p class="dropdown-item" >Within States</p>
+          </form>
+          <a class="dropdown-item" href="#">Within Hyderabad</a>
+          
+          
+        </div>
+      </li> -->
+    </ul>
+  </div>
+</nav>
+<div class="ea">
+<br>
+<br>
+<h1><b>Searching For Travel</b></h1>
+
+    <form method="POST" action="/search">
+        <!-- <select name='source'>
+            <option value='Hyderabad'>Hyderabad</option>
+            <option value="Delhi">Delhi</option>
+        </select> -->
+        <div class="text-center">
+   
+ <div class="input-group mb-3 mn">
+    <div class="input-group-prepend">
+      <label class="input-group-text mt" for="inputGroupSelect01">Source : </label>
+    </div>
+    <select class="custom-select mt" id="inputGroupSelect01" name="source">
+      
+      <option value="Hyderabad">Hyderabad</option>
+      
+    </select>
+  </div>
+        <!-- <select name='destination'>
+           
+            <option value="Delhi">Delhi</option>
+            <option value="Mumbai">Mumbai</option>
+        </select> -->
+
+        <div class="input-group mb-3 mn">
+    <div class="input-group-prepend">
+      <label class="input-group-text mt" for="inputGroupSelect01">Destination : </label>
+    </div>
+    <select class="custom-select mt" id="inputGroupSelect01" name="destination">
+      <option selected>Choose...</option>
+      <option value="Delhi">Delhi</option>
+      <option value="Bangalore">Bangalore</option>
+      <option value="Mumbai">Mumbai</option>
+      <option value="Chennai">Chennai</option>
+    </select>
+  </div>
+
+
+    
+
+</div>
+<div class="text-center">
+        <input class="btn btn-outline-light btn-lg" type="submit" value="Search">      </div>
+
+    </form>
+    
+<!-- <form method="POST" action= "/search">
+<div class="text-center">
+   
+ <div class="input-group mb-3 mn">
+    <div class="input-group-prepend">
+      <label class="input-group-text mt" for="inputGroupSelect01">Source : /label>
+    </div>
+    <select class="custom-select mt" id="inputGroupSelect01" name="source">
+      
+      <option value="Hyderabad">Hyderabad</option>
+      
+    </select>
+  </div> -->
+
+      <!-- div class="input-group mb-3 mn" name="source">
+  <div class="input-group-prepend">
+    <span class="input-group-text mt" id="basic-addon1">Source : </span>
+  </div>
+  <input class="form-control mt" type="text" value="Hyderabad" placeholder="" readonly>
+</div> -->
+    
+<!--         <div class="input-group mb-3 mn">
+    <div class="input-group-prepend">
+      <label class="input-group-text mt" for="inputGroupSelect01">Destination : </label>
+    </div>
+    <select class="custom-select mt" id="inputGroupSelect01" name="destination">
+      <option selected>Choose...</option>
+      <option value="Delhi">Delhi</option>
+      <option value="Bangalore">Bangalore</option>
+      <option value="Mumbai">Mumbai</option>
+      <option value="Chennai">Chennai</option>
+    </select>
+  </div>
+
+
+    
+
+</div>
+        
+
+
+
+
+<div class="text-center">
+  
+  <input type="submit" class="btn btn-primary" data-toggle="button " aria-pressed="false" autocomplete="off" value="Search">
+
+
+    
+<br>
+<br>
+</div>
+    </form>
+ -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>
