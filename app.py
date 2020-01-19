@@ -160,5 +160,21 @@ def booknow1():
 def home1():
     return render_template('home.html')
 
-app.run(port=9000)
 
+@app.route('/book_international')
+def booknow2():
+    return render_template('international.html')
+
+@app.route("/list_international", methods=['POST'])  
+def view24():
+    source = request.form['source']
+    destination = request.form['destination']
+    con = sqlite3.connect("payments.db")  
+    con.row_factory = sqlite3.Row  
+    cur = con.cursor()  
+    #cur.execute("insert into bookings_for_national values ('"+fname+"','"+lname+"','"+email+"','"+phnumber+"','"+source+"','"+destination+"','"+modeoftransport+"','"+tickets_required+"')")  
+    cur.execute("select * from list_for_international where destination = '"+destination+"'")
+    rows = cur.fetchall()  
+    return render_template("table.html",rows = rows)   
+
+app.run(port=9000)
